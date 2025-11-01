@@ -1,5 +1,13 @@
-import { view } from './storybook.requires';
+import { View } from '@storybook/react-native';
 
-const StorybookUIRoot = view.getStorybookUI({});
+// Import all stories
+import '../src/components/Button.stories';
+import '../src/components/Input.stories';
+import '../src/components/Icons.stories';
 
-export default StorybookUIRoot;
+// Import preview configuration
+import './preview';
+
+const StorybookUI = View;
+
+export default StorybookUI;

@@ -14,7 +14,7 @@ type ButtonVariant = 'primary' | 'outline' | 'social';
 
 interface ButtonProps {
   title: string;
-  onPress: () => void;
+  onPress?: () => void;
   variant?: ButtonVariant;
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
@@ -54,7 +54,7 @@ export default function Button({
   return (
     <TouchableOpacity
       style={buttonStyles}
-      onPress={onPress}
+      onPress={onPress || (() => {})}
       disabled={disabled || loading}
       activeOpacity={0.7}
       // iOS-specific optimization for haptic feedback feel
